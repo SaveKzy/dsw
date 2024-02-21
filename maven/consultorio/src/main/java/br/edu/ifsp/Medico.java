@@ -72,6 +72,7 @@ public class Medico extends Pessoa {
 	}
 
 	public Medico() {
+		this.especialidades = new ArrayList<>();
 	}
 
 	public void adicionarEspecialidades(String especialidade) {
