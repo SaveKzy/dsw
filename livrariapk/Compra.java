@@ -5,15 +5,16 @@ import java.util.ArrayList;
 public class Compra {
 
     // Atributos
-
     private Integer id;
     private Cliente cliente;
     private ArrayList<LivroComprado> livrosComprados;
 
     // Contrutores
 
-    public Compra() {
-        livrosComprados = new ArrayList<>();
+    public Compra(Integer id, Cliente cliente, ArrayList<LivroComprado> livrosComprados) {
+        this.id = id;
+        this.cliente = cliente;
+        this.livrosComprados = livrosComprados;
     }
 
     // Getters e Setters
@@ -55,11 +56,9 @@ public class Compra {
     public Double getValorTotal() {
         Double valorTotal = 0.0;
         for (LivroComprado livroComprado : livrosComprados) {
-            valorTotal += livroComprado.getLivro().getPreco() * livroComprado.getQuantidade();
+            valorTotal += livroComprado.getValorTotal();
         }
         return valorTotal;
     }
-
-    
 
 }

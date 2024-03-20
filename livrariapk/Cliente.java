@@ -6,7 +6,6 @@ import java.time.Period;
 public class Cliente {
 
     // Atributos
-
     private String cpf;
     private String nome;
     private LocalDate dataNascimento;

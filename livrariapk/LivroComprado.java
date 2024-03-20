@@ -3,11 +3,15 @@ package br.edu.ifsp;
 public class LivroComprado {
 
     // Atributos
-
     private Livro livro;
     private Integer quantidade;
 
     // Contrutores
+
+    public LivroComprado(Livro livro) {
+        this.livro = livro;
+        this.quantidade = 1;
+    }
 
     public LivroComprado(Livro livro, Integer quantidade) {
         this.livro = livro;
@@ -34,12 +38,12 @@ public class LivroComprado {
 
     // Métodos
 
-    public void aumentarQuantidade() {
-        this.quantidade++;
+    public Double getValorTotal() {
+        return livro.getPreco() * quantidade;
     }
 
-    public void aumentarQuantidade(Integer quantidade) {
-        this.quantidade += quantidade;
+    public Double getValorUnitario() {
+        return livro.getPreco();
     }
 
 }

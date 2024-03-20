@@ -1,58 +1,66 @@
 package br.edu.ifsp;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Livro {
 
     // Atributos
-
-    private ISBN isbn;//
+    private String isbn10;
+    private String isbn13;
     private String titulo;
     private LocalDate dataPublicacao;
     private Double preco;
-    private String idioma;//
+    private idioma idioma;
     private Integer qntPaginas;
-    private String capa;//
+    private formato formato;
     private String descricao;
-    private String estado;//
-    private Editora editora;
+    private condicao condicao;
+    private String editora;
     private Double nota;
     private Integer edicao;
     private Integer estoque;
-    private String escritor;// c
+    private ArrayList<String> escritores;
 
     // Contrutores
 
-    public Livro() {
-    }
-
-    public Livro(ISBN isbn, String titulo, LocalDate dataPublicacao, Double preco, String idioma, Integer qntPaginas,
-            String capa, String descricao, String estado, Editora editora, Double nota, Integer edicao,
-            Integer estoque, String escritor) {
-        this.isbn = isbn;
+    public Livro(String isbn10, String isbn13, String titulo, LocalDate dataPublicacao, Double preco,
+            br.edu.ifsp.idioma idioma, Integer qntPaginas, br.edu.ifsp.formato formato, String descricao,
+            br.edu.ifsp.condicao condicao, String editora, Double nota, Integer edicao, Integer estoque,
+            ArrayList<String> escritores) {
+        this.isbn10 = isbn10;
+        this.isbn13 = isbn13;
         this.titulo = titulo;
         this.dataPublicacao = dataPublicacao;
         this.preco = preco;
         this.idioma = idioma;
         this.qntPaginas = qntPaginas;
-        this.capa = capa;
+        this.formato = formato;
         this.descricao = descricao;
-        this.estado = estado;
+        this.condicao = condicao;
         this.editora = editora;
         this.nota = nota;
         this.edicao = edicao;
         this.estoque = estoque;
-        this.escritor = escritor;
+        this.escritores = escritores;
     }
 
     // Getters e Setters
 
-    public ISBN getIsbn() {
-        return isbn;
+    public String getIsbn10() {
+        return isbn10;
     }
 
-    public void setIsbn(ISBN isbn) {
-        this.isbn = isbn;
+    public void setIsbn10(String isbn10) {
+        this.isbn10 = isbn10;
+    }
+
+    public String getIsbn13() {
+        return isbn13;
+    }
+
+    public void setIsbn13(String isbn13) {
+        this.isbn13 = isbn13;
     }
 
     public String getTitulo() {
@@ -79,11 +87,11 @@ public class Livro {
         this.preco = preco;
     }
 
-    public String getIdioma() {
+    public idioma getIdioma() {
         return idioma;
     }
 
-    public void setIdioma(String idioma) {
+    public void setIdioma(idioma idioma) {
         this.idioma = idioma;
     }
 
@@ -95,12 +103,12 @@ public class Livro {
         this.qntPaginas = qntPaginas;
     }
 
-    public String getCapa() {
-        return capa;
+    public formato getFormato() {
+        return formato;
     }
 
-    public void setCapa(String capa) {
-        this.capa = capa;
+    public void setFormato(formato formato) {
+        this.formato = formato;
     }
 
     public String getDescricao() {
@@ -111,19 +119,19 @@ public class Livro {
         this.descricao = descricao;
     }
 
-    public String getEstado() {
-        return estado;
+    public condicao getCondicao() {
+        return condicao;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setCondicao(condicao condicao) {
+        this.condicao = condicao;
     }
 
-    public Editora getEditora() {
+    public String getEditora() {
         return editora;
     }
 
-    public void setEditora(Editora editora) {
+    public void setEditora(String editora) {
         this.editora = editora;
     }
 
@@ -151,22 +159,14 @@ public class Livro {
         this.estoque = estoque;
     }
 
-    public String getEscritor() {
-        return escritor;
+    public ArrayList<String> getEscritores() {
+        return escritores;
     }
 
-    public void setEscritor(String escritor) {
-        this.escritor = escritor;
+    public void setEscritores(ArrayList<String> escritores) {
+        this.escritores = escritores;
     }
 
     // Métodos
-
-    public boolean estoque() {
-        return (estoque > 0);
-    }
-
-    public boolean estoque(Integer qnt) {
-        return (estoque >= qnt);
-    }
 
 }
